@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+   xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+   xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+   xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+   xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+   xmlns:sts="dian:gov:co:facturaelectronica:Structures-2-1"
+   xmlns:xades="http://uri.etsi.org/01903/v1.3.2#"
+   xmlns:xades141="http://uri.etsi.org/01903/v1.4.1#"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/maindoc/UBL-Invoice-2.1.xsd">
+
+
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <sts:DianExtensions>
+
+
+               <sts:InvoiceControl>
+                  <sts:InvoiceAuthorization>{InvoiceAuthorization}</sts:InvoiceAuthorization>
+                  <sts:AuthorizationPeriod>
+                     <cbc:StartDate>{StartDate}</cbc:StartDate>
+                     <cbc:EndDate>{EndDate}</cbc:EndDate>
+                  </sts:AuthorizationPeriod>
+                  <sts:AuthorizedInvoices>
+                     <sts:Prefix>SETP</sts:Prefix>
+                     <sts:From>{From}</sts:From>
+                     <sts:To>{To}</sts:To>
+                  </sts:AuthorizedInvoices>
+               </sts:InvoiceControl>
+
+
+               <sts:InvoiceSource>
+                  <cbc:IdentificationCode listAgencyID="6"
+                     listAgencyName="United Nations Economic Commission for Europe"
+                     listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode-2.1">
+   CO</cbc:IdentificationCode>
+               </sts:InvoiceSource>
+
+
+               <sts:SoftwareProvider>
+                  <sts:ProviderID schemeAgencyID="195"
+                     schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)"
+                     schemeID="4" schemeName="31">{ProviderID}</sts:ProviderID>
+                  <sts:SoftwareID schemeAgencyID="195"
+                     schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)">
+   {SoftwareID}</sts:SoftwareID>
+               </sts:SoftwareProvider>
+
+
+               <sts:SoftwareSecurityCode schemeAgencyID="195"
+                  schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)">
+   {SoftwareSecurityCode}</sts:SoftwareSecurityCode>
+
+
+               <sts:AuthorizationProvider>
+                  <sts:AuthorizationProviderID schemeAgencyID="195"
+                     schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)"
+                     schemeID="4" schemeName="31">{AuthorizationProviderID}</sts:AuthorizationProviderID>
+               </sts:AuthorizationProvider>
+
+
+               <sts:QRCode>
+                  NroFactura=SETP990000002
+                  NitFacturador=800197268
+                  NitAdquiriente=900108281
+                  FechaFactura=2019-06-20
+                  ValorTotalFactura=14024.07
+   CUFE=941cf36af62dbbc06f105d2a80e9bfe683a90e84960eae4d351cc3afbe8f848c26c39bac4fbc80fa254824c6369ea694
+   URL=https://catalogo-vpfe-hab.dian.gov.co/Document/FindDocument?documentKey=941cf36af62dbbc06f105d2a80e9bfe683a90e84960eae4d351cc3afbe8f848c26c39bac4fbc80fa254824c6369ea694&amp;partitionKey=co|06|94&amp;emissionDate=20190620</sts:QRCode>
+            </sts:DianExtensions>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <!-- firma  -->
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+
+
+   </ext:UBLExtensions>
+
+
+   <cbc:UBLVersionID>UBL
+   2.1</cbc:UBLVersionID>
+   <cbc:CustomizationID>{CustomizationID}</cbc:CustomizationID>
+   <cbc:ProfileID>
+   {ProfileID}</cbc:ProfileID>
+   <cbc:ProfileExecutionID>{ProfileExecutionID}</cbc:ProfileExecutionID>
+   <cbc:ID>
+   {ID}</cbc:ID>
+   <cbc:UUID schemeID="2" schemeName="CUFE-SHA384">
+      {UUID}
+   </cbc:UUID>
+   <cbc:IssueDate>{IssueDate}</cbc:IssueDate>
+   <cbc:IssueTime>{IssueTime}</cbc:IssueTime>
+   <cbc:InvoiceTypeCode>
+   {InvoiceTypeCode}</cbc:InvoiceTypeCode>
+   <cbc:Note>
+      {Note}
+   </cbc:Note>
+   <cbc:DocumentCurrencyCode listAgencyID="6"
+      listAgencyName="United Nations Economic Commission for Europe" listID="ISO 4217 Alpha">
+      COP
+   </cbc:DocumentCurrencyCode>
+   <cbc:LineCountNumeric>{LineCountNumeric}</cbc:LineCountNumeric>
+   
+   <cac:InvoicePeriod>
+      <cbc:StartDate>{StartDate}</cbc:StartDate>
+      <cbc:EndDate>{EndDate}</cbc:EndDate>
+   </cac:InvoicePeriod> este campo es opcional. Se debe
+ 
+ 
+ 
+   <!-- diligenciar únicamente cuando la FE se origina a partir de la corrección o ajuste que se da
+   mediante un Nota Crédito -->
+    <!-- <cac:BillingReference>
+      <cac:InvoiceDocumentReference>
+         <cbc:ID>SFR3123856</cbc:ID>
+         <cbc:UUID schemeName="CUFE-SHA1">a675432fecc1d537361dcdbdfbd08d6e5283f2bc</cbc:UUID>
+         <cbc:IssueDate>2018-09-29</cbc:IssueDate>
+         <cbc:DocumentDescription>Prepago recibido</cbc:DocumentDescription>
+      </cac:InvoiceDocumentReference>
+   </cac:BillingReference>
+   <cac:BillingReference>
+      <cac:InvoiceDocumentReference>
+         <cbc:ID>SETP990000101</cbc:ID>
+         <cbc:UUID schemeName="CUFE-SHA384">
+   1dc661228f152332d876e1f1cd2042ecdea1804ed0da78f84dc9ee0938d69f17037dc53f97778ed2721d65c1fc3c73ac</cbc:UUID>
+         <cbc:IssueDate>2018-09-29</cbc:IssueDate>
+         <cbc:DocumentDescription>Factura anterior</cbc:DocumentDescription>
+      </cac:InvoiceDocumentReference>
+   </cac:BillingReference> -->
+
+
+   <cac:AccountingSupplierParty>
+      <cbc:AdditionalAccountID>{AdditionalAccountID}</cbc:AdditionalAccountID>
+      
+      <cac:Party>
+         <cbc:IndustryClasificationCode>{IndustryClasificationCode}</cbc:IndustryClasificationCode>
+         <cac:PartyName>
+            <cbc:Name>{ConpanyName}</cbc:Name>
+         </cac:PartyName>
+         <!-- <cac:PartyName>
+            <cbc:Name>Establecimiento </cbc:Name>
+         </cac:PartyName>
+         <cac:PartyName>
+            <cbc:Name>DIAN</cbc:Name>
+         </cac:PartyName> -->
+         <cac:PhysicalLocation>
+            <cac:Address>
+               <cbc:ID>{ConpanyPostCode}</cbc:ID>
+               <cbc:CityName>{ConpanyCity}</cbc:CityName>
+               <cbc:CountrySubentity>{CountrySubentity}</cbc:CountrySubentity>
+               <cbc:CountrySubentityCode>{CountrySubentityCode}</cbc:CountrySubentityCode>
+               <cac:AddressLine>
+                  <cbc:Line>{CompatyAddress}</cbc:Line>
+               </cac:AddressLine>
+               <cac:Country>
+                  <cbc:IdentificationCode>CO</cbc:IdentificationCode>
+                  <cbc:Name languageID="es">Colombia</cbc:Name>
+               </cac:Country>
+            </cac:Address>
+         </cac:PhysicalLocation>
+
+         <!-- le falta cosas video 11 -->
+         <cac:PartyTaxScheme>
+            <cbc:RegistrationName>{RegistrationName}</cbc:RegistrationName>
+            <cbc:CompanyID schemeAgencyID="195"
+               schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)"
+               schemeID="4" schemeName="31">{CompanyNit}</cbc:CompanyID>
+            <cbc:TaxLevelCode listName="05">{TaxLevelCode}</cbc:TaxLevelCode>
+            
+            
+            <cac:RegistrationAddress>
+               <!-- RegistrationAddress es Grupo para informar dirección fiscal  -->
+               <cbc:ID>{CityCode}</cbc:ID>
+               <cbc:CityName>{ConpanyCity}</cbc:CityName>
+               <cbc:CountrySubentity>{CountrySubentity}</cbc:CountrySubentity>
+               <cbc:CountrySubentityCode>{CountrySubentityCode}</cbc:CountrySubentityCode>
+               <cac:AddressLine>
+                  <cbc:Line>{CompatyAddress}</cbc:Line>
+               </cac:AddressLine>
+               <cac:Country>
+                  <cbc:IdentificationCode>CO</cbc:IdentificationCode>
+                  <cbc:Name languageID="es">Colombia</cbc:Name>
+               </cac:Country>
+            </cac:RegistrationAddress>    
+            
+            <cac:TaxScheme>
+               <cbc:ID>{TaxSchemeID}</cbc:ID>
+               <cbc:Name>{TaxSchemeName}</cbc:Name>
+            </cac:TaxScheme>
+         </cac:PartyTaxScheme>
+
+
+         <cac:PartyLegalEntity>
+            <cbc:RegistrationName>{RegistrationName}</cbc:RegistrationName>
+            <cbc:CompanyID schemeAgencyID="195"
+               schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)"
+               schemeID="9" schemeName="31">{CompanyNit}</cbc:CompanyID>
+            <!-- <cac:CorporateRegistrationScheme>
+               <cbc:ID>{Prefix}</cbc:ID>
+               <cbc:Name>10181</cbc:Name>
+            </cac:CorporateRegistrationScheme> -->
+         </cac:PartyLegalEntity>
+         <!-- <cac:Contact>
+            <cbc:Name>Eric Valencia</cbc:Name>
+            <cbc:Telephone>6111111</cbc:Telephone>
+            <cbc:ElectronicMail>eric.valencia@ket.co</cbc:ElectronicMail>
+            <cbc:Note>Test descripcion contacto</cbc:Note>
+         </cac:Contact> -->
+      </cac:Party>
+   </cac:AccountingSupplierParty>
+
+
+
+   <!-- Grupo con información que definen el Adquiriente  -->
+   <cac:AccountingCustomerParty>
+      <cbc:AdditionalAccountID>{AdditionalAccountID}</cbc:AdditionalAccountID>
+      <!-- Grupo con información generales sobre el adquiriente -->
+      <cac:Party>
+         <cac:PartyName>
+            <cbc:Name>{PartyName}</cbc:Name>
+         </cac:PartyName>
+
+         <!-- opcional -->
+         <!-- <cac:PhysicalLocation>
+            <cac:Address>
+               <cbc:ID>{clientAddress}</cbc:ID>
+               <cbc:CityName>{clientCity}</cbc:CityName>
+               <cbc:CountrySubentity>{clientDepar}</cbc:CountrySubentity>
+               <cbc:CountrySubentityCode>{ClientCodeDepar}</cbc:CountrySubentityCode>
+               
+               <cac:AddressLine>
+                  <cbc:Line>{ClientAddressLine}</cbc:Line>
+               </cac:AddressLine>
+               <cac:Country>
+                  <cbc:IdentificationCode>CO</cbc:IdentificationCode>
+                  <cbc:Name languageID="es">Colombia</cbc:Name>
+               </cac:Country>
+            </cac:Address>
+         </cac:PhysicalLocation> -->
+
+         <!-- Grupo de información tributarias del Adquiriente. -->
+         <cac:PartyTaxScheme>
+            <cbc:RegistrationName>{ClientRegistrationName}</cbc:RegistrationName>
+            <cbc:CompanyID schemeAgencyID="195"
+               schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)"
+               schemeName="31">{ClientNit}</cbc:CompanyID>
+               <!-- opcional -->
+            <!-- <cbc:TaxLevelCode listName="04">O-99</cbc:TaxLevelCode> -->
+
+               <!-- opcional -->
+            <!-- <cac:RegistrationAddress>
+               <cbc:ID>11001</cbc:ID>
+               <cbc:CityName>Bogotá, D.c. </cbc:CityName>
+               <cbc:CountrySubentity>Bogotá</cbc:CountrySubentity>
+               <cbc:CountrySubentityCode>11</cbc:CountrySubentityCode>
+               <cac:AddressLine>
+                  <cbc:Line>CR 9 A N0 99 - 07 OF 802</cbc:Line>
+               </cac:AddressLine>
+               <cac:Country>
+                  <cbc:IdentificationCode>CO</cbc:IdentificationCode>
+                  <cbc:Name languageID="es">Colombia</cbc:Name>
+               </cac:Country>
+            </cac:RegistrationAddress> -->
+            <cac:TaxScheme>
+               <cbc:ID>ZZ</cbc:ID>
+               <cbc:Name>No aplica</cbc:Name>
+            </cac:TaxScheme>
+         </cac:PartyTaxScheme>
+
+         <!-- Grupo de información legal del adquiriente -->
+         <cac:PartyLegalEntity>
+            <cbc:RegistrationName>{ClientRegistrationName}</cbc:RegistrationName>
+            <cbc:CompanyID schemeAgencyID="195"
+               schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)"
+               schemeID="3" schemeName="31">{ClientNit}</cbc:CompanyID>
+            
+               <!-- <cac:CorporateRegistrationScheme>
+               <cbc:Name>90518</cbc:Name>
+            </cac:CorporateRegistrationScheme> -->
+         </cac:PartyLegalEntity>
+         <!-- <cac:Contact>
+            <cbc:Name>Diana Cruz</cbc:Name>
+            <cbc:Telephone>31031031089</cbc:Telephone>
+            <cbc:ElectronicMail>dcruz@empresa.org</cbc:ElectronicMail>
+         </cac:Contact> -->
+      </cac:Party>
+   </cac:AccountingCustomerParty>
+  
+   <!-- Grupo de información de la Persona autorizada para descargar documentos -->
+   <!-- <cac:TaxRepresentativeParty>
+      <cac:PartyIdentification>
+         <cbc:ID schemeAgencyID="195"
+            schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)" schemeID="4"
+            schemeName="31">989123123</cbc:ID>
+      </cac:PartyIdentification>
+   </cac:TaxRepresentativeParty> -->
+
+   <!-- Grupo de información para entrega de bienes  -->
+   <!-- <cac:Delivery>
+      <cac:DeliveryAddress>
+         <cbc:ID>11001</cbc:ID>
+         <cbc:CityName>Bogotá, D.c. </cbc:CityName>
+         <cbc:CountrySubentity>Bogotá, D.c. 11</cbc:CountrySubentity>
+         <cbc:CountrySubentityCode>11</cbc:CountrySubentityCode>
+         <cac:AddressLine>
+            <cbc:Line>CARRERA 8 No 20-14/40</cbc:Line>
+         </cac:AddressLine>
+         <cac:Country>
+            <cbc:IdentificationCode>CO</cbc:IdentificationCode>
+            <cbc:Name languageID="es">Colombia</cbc:Name>
+         </cac:Country>
+      </cac:DeliveryAddress>
+      <cac:DeliveryParty>
+         <cac:PartyName>
+            <cbc:Name>Empresa de transporte</cbc:Name>
+         </cac:PartyName>
+         <cac:PhysicalLocation>
+            <cac:Address>
+               <cbc:ID>11001</cbc:ID>
+               <cbc:CityName>Bogotá, D.c. </cbc:CityName>
+               <cbc:CountrySubentity>Bogotá</cbc:CountrySubentity>
+               <cbc:CountrySubentityCode>11</cbc:CountrySubentityCode>
+               <cac:AddressLine>
+                  <cbc:Line>Av. #17 - 193</cbc:Line>
+               </cac:AddressLine>
+               <cac:Country>
+                  <cbc:IdentificationCode>CO</cbc:IdentificationCode>
+                  <cbc:Name languageID="es">Colombia</cbc:Name>
+               </cac:Country>
+            </cac:Address>
+         </cac:PhysicalLocation>
+         <cac:PartyTaxScheme>
+            <cbc:RegistrationName>Empresa de transporte</cbc:RegistrationName>
+            <cbc:CompanyID schemeAgencyID="195"
+               schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)"
+               schemeID="1" schemeName="31">981223983</cbc:CompanyID>
+            <cbc:TaxLevelCode listName="04">O-99</cbc:TaxLevelCode>
+            <cac:TaxScheme>
+               <cbc:ID>01</cbc:ID>
+               <cbc:Name>IVA</cbc:Name>
+            </cac:TaxScheme>
+         </cac:PartyTaxScheme>
+         <cac:PartyLegalEntity>
+            <cbc:RegistrationName>Empresa de transporte</cbc:RegistrationName>
+            <cbc:CompanyID schemeAgencyID="195"
+               schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)"
+               schemeID="1" schemeName="31">981223983</cbc:CompanyID>
+            <cac:CorporateRegistrationScheme>
+               <cbc:Name>75433</cbc:Name>
+            </cac:CorporateRegistrationScheme>
+         </cac:PartyLegalEntity>
+         <cac:Contact>
+            <cbc:Name>Eric Van Boxsom</cbc:Name>
+            <cbc:Telephone>9712311</cbc:Telephone>
+            <cbc:Telefax>12431241</cbc:Telefax>
+            <cbc:ElectronicMail>eric.vanboxsom@gosocket.net</cbc:ElectronicMail>
+            <cbc:Note>Test descripcion contacto</cbc:Note>
+         </cac:Contact>
+      </cac:DeliveryParty>
+   </cac:Delivery>
+ -->
+
+ <!-- Grupo para información relacionadas con la entrega -->
+   <!-- <cac:DeliveryTerms>
+      <cbc:SpecialTerms>Portes Pagados</cbc:SpecialTerms>
+      <cbc:LossRiskResponsibilityCode>CFR</cbc:LossRiskResponsibilityCode>
+      <cbc:LossRisk>Costo y Flete</cbc:LossRisk>
+   </cac:DeliveryTerms> -->
+
+   <!-- Grupo de campos para información relacionadas con el pago de la factura. -->
+   <cac:PaymentMeans>
+      <cbc:ID>{PaymentMeansID}</cbc:ID>
+      <cbc:PaymentMeansCode>{PaymentMeansCode}</cbc:PaymentMeansCode>
+      <!-- Fecha de vencimiento de la factura  -->
+      <!-- <cbc:PaymentDueDate>2019-06-30</cbc:PaymentDueDate> -->
+      <!-- Identificador del pago -->
+      <!-- <cbc:PaymentID>1234</cbc:PaymentID> -->
+   </cac:PaymentMeans>
+   <!-- Grupo de campos para información relacionadas con un anticipo -->
+   <!-- <cac:PrepaidPayment>
+      <cbc:ID>SFR3123856</cbc:ID>
+      <cbc:PaidAmount currencyID="COP">1000.00</cbc:PaidAmount>
+      <cbc:ReceivedDate>2018-09-29</cbc:ReceivedDate>
+      <cbc:PaidDate>2018-09-29</cbc:PaidDate>
+      <cbc:InstructionID>Prepago recibido</cbc:InstructionID>
+   </cac:PrepaidPayment> -->
+   <!-- Grupo de campos para información totales relacionadas con un tributo  -->
+ 
+ 
+ 
+ 
+   <cac:TaxTotal>
+      <!-- nose que poner -->
+      <cbc:TaxAmount currencyID="COP">{TaxAmountToal}</cbc:TaxAmount>
+      <!-- para cada producto se crea un TaxSubtotal -->
+      <cac:TaxSubtotal>
+         <cbc:TaxableAmount currencyID="COP">{TaxAmount}</cbc:TaxableAmount>
+
+         <!-- nose que poner FAS07 -->
+         <cbc:TaxAmount currencyID="COP">2394.01</cbc:TaxAmount>
+         <cac:TaxCategory>
+            <!-- nose que poner FAS14 -->
+            <cbc:Percent>19.00</cbc:Percent>
+            <cac:TaxScheme>
+               <!-- nose FAS16 -->
+               <cbc:ID>01</cbc:ID>
+               <cbc:Name>IVA</cbc:Name>
+            </cac:TaxScheme>
+         </cac:TaxCategory>
+      </cac:TaxSubtotal>
+
+     
+   </cac:TaxTotal>
+
+   
+   <!-- <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="COP">0.00</cbc:TaxAmount>
+      <cac:TaxSubtotal>
+         <cbc:TaxableAmount currencyID="COP">0.00</cbc:TaxableAmount>
+         <cbc:TaxAmount currencyID="COP">0.00</cbc:TaxAmount>
+         <cac:TaxCategory>
+            <cbc:Percent>0.00</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>03</cbc:ID>
+               <cbc:Name>ICA</cbc:Name>
+            </cac:TaxScheme>
+         </cac:TaxCategory>
+      </cac:TaxSubtotal>
+   </cac:TaxTotal> -->
+
+<!--    
+   <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="COP">0.00</cbc:TaxAmount>
+      <cac:TaxSubtotal>
+         <cbc:TaxableAmount currencyID="COP">0.00</cbc:TaxableAmount>
+         <cbc:TaxAmount currencyID="COP">0.00</cbc:TaxAmount>
+         <cac:TaxCategory>
+            <cbc:Percent>0.00</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>04</cbc:ID>
+               <cbc:Name>INC</cbc:Name>
+            </cac:TaxScheme>
+         </cac:TaxCategory>
+      </cac:TaxSubtotal>
+   </cac:TaxTotal>
+   
+    -->
+    
+   
+   
+   
+   <cac:LegalMonetaryTotal>
+      <cbc:LineExtensionAmount currencyID="COP">{LineExtensionAmount}</cbc:LineExtensionAmount>
+
+      <!-- nose que poner -->
+      <cbc:TaxExclusiveAmount currencyID="COP">12787.56</cbc:TaxExclusiveAmount>
+      <cbc:TaxInclusiveAmount currencyID="COP">15024.07</cbc:TaxInclusiveAmount>
+      <cbc:PrepaidAmount currencyID="COP">1000.00</cbc:PrepaidAmount>
+      <cbc:PayableAmount currencyID="COP">15024.07</cbc:PayableAmount>
+   </cac:LegalMonetaryTotal>
+
+<!-- dinamico es por cada producto -->
+   <cac:InvoiceLine>
+      <cbc:ID>{InvoiceLineID}</cbc:ID>
+      <cbc:InvoicedQuantity unitCode="{InvoicedQuantityunitCode}">{InvoicedQuantity}</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="COP">{LineExtensionAmountProduc}</cbc:LineExtensionAmount>
+      <!-- nose que es -->
+      <cbc:FreeOfChargeIndicator>false</cbc:FreeOfChargeIndicator>
+      <!-- <cac:Delivery>
+         <cac:DeliveryLocation>
+            <cbc:ID schemeID="999" schemeName="EAN">613124312412</cbc:ID>
+         </cac:DeliveryLocation>
+      </cac:Delivery> -->
+
+         <!-- descuento -->
+          <!-- nose que poner -->
+      <!-- <cac:AllowanceCharge>
+         <cbc:ID>1</cbc:ID>
+         <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+         <cbc:AllowanceChargeReason>Descuento por cliente frecuente</cbc:AllowanceChargeReason>
+         <cbc:MultiplierFactorNumeric>33.33</cbc:MultiplierFactorNumeric>
+         <cbc:Amount currencyID="COP">6299.94</cbc:Amount>
+         <cbc:BaseAmount currencyID="COP">18900.00</cbc:BaseAmount>
+      </cac:AllowanceCharge> -->
+
+      <!-- nose que poner FAX01 19-->
+      <cac:TaxTotal>
+         <cbc:TaxAmount currencyID="COP">2394.01</cbc:TaxAmount>
+         <cac:TaxSubtotal>
+            <cbc:TaxableAmount currencyID="COP">12600.06</cbc:TaxableAmount>
+            <cbc:TaxAmount currencyID="COP">2394.01</cbc:TaxAmount>
+            <cac:TaxCategory>
+               <cbc:Percent>19.00</cbc:Percent>
+               <cac:TaxScheme>
+                  <cbc:ID>01</cbc:ID>
+                  <cbc:Name>IVA</cbc:Name>
+               </cac:TaxScheme>
+            </cac:TaxCategory>
+         </cac:TaxSubtotal>
+      </cac:TaxTotal>
+
+      <!-- Grupo de información que describen las características del artículo o servicio  -->
+      <cac:Item>
+         <cbc:Description>{DescriptionProduc}</cbc:Description>
+         <cac:SellersItemIdentification>
+            <cbc:ID>{SellersItemIdentificationID}</cbc:ID>
+         </cac:SellersItemIdentification>
+
+         <!-- nose que poner FBF01 19 -->
+         <!-- <cac:AdditionalItemIdentification>
+            <cbc:ID schemeID="999" schemeName="EAN13">6543542313534</cbc:ID>
+         </cac:AdditionalItemIdentification> -->
+      </cac:Item>
+      <cac:Price>
+         <cbc:PriceAmount currencyID="COP">{PriceAmount}</cbc:PriceAmount>
+         <cbc:BaseQuantity unitCode="EA">{BaseQuantity}</cbc:BaseQuantity>
+      </cac:Price>
+   </cac:InvoiceLine>
+
+</Invoice>
+
+<!-- 16,17,19 -->
